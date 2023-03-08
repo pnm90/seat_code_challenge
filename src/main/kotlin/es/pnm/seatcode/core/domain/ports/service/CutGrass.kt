@@ -5,5 +5,5 @@ import es.pnm.seatcode.core.domain.model.Plateau
 
 
 interface CutGrass {
-  fun execute(plateau: Plateau):List<OrientedPosition>
+    fun execute(plateau: Plateau): List<OrientedPosition>
 }

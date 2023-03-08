@@ -6,8 +6,8 @@ class Plateau(
 ) {
 
 
-    var grid: Grid = Grid(gridField = Array(dimension.endPosition.x) {
-        arrayOfNulls(dimension.endPosition.y)
+    var grid: Grid = Grid(gridField = Array(dimension.endPosition.x + 1) {
+        arrayOfNulls(dimension.endPosition.y + 1)
     })
 
     companion object {
@@ -16,7 +16,10 @@ class Plateau(
             return Plateau(
                 dimension = Dimension(
                     initPosition = Position(x = 0, y = 0),
-                    endPosition = Position(x = splittedInput[0].toInt(), y = splittedInput[1].toInt())
+                    endPosition = Position(
+                        x = splittedInput[0].toInt(),
+                        y = splittedInput[1].toInt()
+                    )
                 ),
                 mowers = emptyList()
             )

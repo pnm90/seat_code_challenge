@@ -13,13 +13,13 @@ import org.springframework.stereotype.Service
 class CutGrassManager : CutGrass {
 
     override fun execute(plateau: Plateau): List<OrientedPosition> {
-        val mowerEndPosition= ArrayList<OrientedPosition>()
+        val mowerEndPosition = ArrayList<OrientedPosition>()
         plateau.mowers.forEach {
             println("mower ${it.movements}")
             moveMower(plateau.grid, it)
             mowerEndPosition.add(it.currentPosition)
+            plateau.grid.gridField[it.currentPosition.x][it.currentPosition.y] = it
         }
-
         return mowerEndPosition
 
     }
